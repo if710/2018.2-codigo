@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PrimeiraAula</string>
+    <string name="txtBotao">Clique aqui</string>
+    <string name="dicaTexto">Digite algo aqui...</string>
 </resources>
