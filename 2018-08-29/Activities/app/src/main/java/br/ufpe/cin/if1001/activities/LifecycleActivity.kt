@@ -16,6 +16,26 @@ class LifecycleActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lifecycle)
 
+        textoDigitado.text = savedInstanceState?.getString(keyDIGITADO)
+        lifecycleLog.text = savedInstanceState?.getString(keyLIFECYCLE)
+
+        botaoDialog.setOnClickListener {
+            alert("Alguma mensagem...") {
+                title = "Titulo"
+                positiveButton("Beleza!") {toast("clicou em beleza!")}
+            }.show()
+        }
+
+        botaoAdicionaTexto.setOnClickListener {
+            val oQueFoiDigitado = campoTexto.text
+            if (oQueFoiDigitado.isEmpty()) {
+                toast("Digite algo, por favor.")
+            } else {
+                textoDigitado.text = oQueFoiDigitado
+            }
+        }
+
+
         status = "onCreate() de " + this.localClassName
         atualizaLifecycle(status)
         toast(status)
@@ -23,6 +43,59 @@ class LifecycleActivity : Activity() {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        status = "onStart() de " + this.localClassName
+        atualizaLifecycle(status)
+        toast(status)
+        Log.d(this.localClassName, status)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        status = "onResume() de " + this.localClassName
+        atualizaLifecycle(status)
+        toast(status)
+        Log.d(this.localClassName, status)
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        status = "onRestart() de " + this.localClassName
+        atualizaLifecycle(status)
+        toast(status)
+        Log.d(this.localClassName, status)
+    }
+
+    override fun onPause() {
+        status = "onPause() de " + this.localClassName
+        atualizaLifecycle(status)
+        toast(status)
+        Log.d(this.localClassName, status)
+        super.onPause()
+    }
+
+    override fun onStop() {
+        status = "onStop() de " + this.localClassName
+        atualizaLifecycle(status)
+        toast(status)
+        Log.d(this.localClassName, status)
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        status = "onDestroy() de " + this.localClassName
+        atualizaLifecycle(status)
+        toast(status)
+        Log.d(this.localClassName, status)
+        super.onDestroy()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        outState?.putString(keyDIGITADO,textoDigitado.text.toString())
+        outState?.putString(keyLIFECYCLE,lifecycleLog.text.toString())
+        super.onSaveInstanceState(outState)
+    }
 
 
     private fun atualizaLifecycle(msg: String) {

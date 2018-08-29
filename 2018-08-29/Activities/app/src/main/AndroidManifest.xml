@@ -20,6 +20,13 @@
         <activity android:name=".TxtActivity" />
         <activity android:name=".StartActResultActivity" />
         <activity android:name=".AppLinkActivity">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"
+                    android:host="www.cin.ufpe.br" />
+            </intent-filter>
         </activity>
     </application>
 
