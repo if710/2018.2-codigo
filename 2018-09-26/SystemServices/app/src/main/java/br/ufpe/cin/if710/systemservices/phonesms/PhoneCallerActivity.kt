@@ -27,5 +27,8 @@ class PhoneCallerActivity : Activity(), View.OnClickListener {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
             startActivity(i)
         }
+        else {
+            //Toast.make...
+        }
     }
 }
