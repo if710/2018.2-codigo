@@ -42,13 +42,6 @@ class MainActivity : Activity() {
                 acessarCamera()
             } else {
                 ActivityCompat.requestPermissions(this@MainActivity, CAMERA_PERMISSIONS, CAMERA_REQUEST)
-                /*
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        requestPermissions(CAMERA_PERMISSIONS, CAMERA_REQUEST);
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Use API mais nova (23+)", Toast.LENGTH_SHORT).show();
-                    }
-                */
             }
         }
 
@@ -57,13 +50,6 @@ class MainActivity : Activity() {
                 acessarContacts()
             } else {
                 ActivityCompat.requestPermissions(this@MainActivity, CONTACTS_PERMISSIONS, CONTACTS_REQUEST)
-                /*
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        requestPermissions(CONTACTS_PERMISSIONS, CONTACTS_REQUEST);
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Use API mais nova (23+)", Toast.LENGTH_SHORT).show();
-                    }
-                    */
             }
         }
 
@@ -143,5 +129,4 @@ class MainActivity : Activity() {
     private fun acessarLocation() {
         Toast.makeText(this, R.string.msg_location, Toast.LENGTH_SHORT).show()
     }
-
 }

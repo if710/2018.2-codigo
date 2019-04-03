@@ -37,7 +37,8 @@ class AsyncTaskActivity : Activity() {
     }
 
     //<Entrada, Progresso, Resultado>
-    internal inner class LoadIconTask : AsyncTask<Int, Int, Bitmap>() {
+    internal inner class LoadIconTask :
+            AsyncTask<Int, Int, Bitmap>() {
 
         //garantido de rodar na thread principal
         override fun onPreExecute() {
@@ -46,7 +47,7 @@ class AsyncTaskActivity : Activity() {
             toasts = 0
             contadorToasts.text = getString(R.string.contador_de_toasts) + toasts
         }
-
+        //Bitmap doInBackground(Int... resId)
         protected override fun doInBackground(vararg resId: Int?): Bitmap {
             if (resId!=null) {
                 val res = resId[0]

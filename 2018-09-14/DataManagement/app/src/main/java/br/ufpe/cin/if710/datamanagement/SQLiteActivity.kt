@@ -16,7 +16,7 @@ import org.jetbrains.anko.uiThread
 
 class SQLiteActivity : Activity() {
 
-    protected override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sqlite)
 

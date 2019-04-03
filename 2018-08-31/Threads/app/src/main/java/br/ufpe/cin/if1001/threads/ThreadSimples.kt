@@ -39,7 +39,8 @@ class ThreadSimples : Activity() {
     }
 
     private fun loadIcon() {
-
+        /*
+        //Anko (lib)
         doAsync {
             try {
                 Thread.sleep(mDelay.toLong())
@@ -53,7 +54,9 @@ class ThreadSimples : Activity() {
                 imageView.setImageBitmap(mBitmap)
             }
         }
-        /*
+        */
+
+        //new Thread(Runnable).start();
         Thread(Runnable {
             try {
                 Thread.sleep(mDelay.toLong())
@@ -66,7 +69,6 @@ class ThreadSimples : Activity() {
 
             imageView.setImageBitmap(mBitmap)
         }).start()
-        */
     }
 
     companion object {
